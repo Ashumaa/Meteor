@@ -26,7 +26,7 @@ Gli schema vengono utilizzati in modo che i dati che arrivano all'utente(fronten
 
 Connessione al server
 ------------
-Meteor lavora in modo simile
+Meteor lavora in modo simile [tRPC](https://trpc.io) e [Blitz.js](https://blitzjs.com) (altre tecnologie utilizzate per la connessione server)
 ```
 /**
  * Rimuove una task.
@@ -43,4 +43,8 @@ Meteor.methods({
   removeTask,
   toggleTaskDone,
 });
+```
+Per chiamare questo metodo del server dobbiamo usare il suo nome, esempio:
+```
+ onDelete={taskId => Meteor.call('removeTask', { taskId })}
 ```
