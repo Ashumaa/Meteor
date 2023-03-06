@@ -60,6 +60,7 @@ Meteor.methods(methods), definisce funzioni del server che possono essere invoca
 this.userId, ritorna l'id dell'utente se nessuno è loggato ritorna null(id utilizzato per identificare l'utente nel database)
 
 new Meteor.Error(error, [reason], [details]), rappresente un errore lanciato da un metodo
+
 new Mongo.Collection(name, [options]), crea una collection (tipo di oggetto che rappresenta 
 un insieme di documenti all'interno del database, facilemte accessibile e gestibile)
 
