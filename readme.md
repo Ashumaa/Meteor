@@ -7,6 +7,7 @@ In questo template vengono aggiunti anche pacchetti aggiuntivi di meteor che si 
 [Atmosphere]( https://atmospherejs.com).
 Alcuni pacchetti aggiunto sono simpl-schema e percolate:migrations, il primo è utilizzato per validare gli schema durante il run-time mentre il secondo crea le migrazioni del database.
 ```
+//api/main.js
 import { Meteor } from "meteor/meteor";
 import { Migrations } from "meteor/percolate:migrations";
 import "./db/migrations";
@@ -28,6 +29,7 @@ Connessione al server
 ------------
 Meteor lavora in modo simile [tRPC](https://trpc.io) e [Blitz.js](https://blitzjs.com) (altre tecnologie utilizzate per la connessione server)
 ```
+//api/tasks/tasks.methods.js
 /**
  * Rimuove una task.
  * @param {{ taskId: String }}
@@ -46,5 +48,6 @@ Meteor.methods({
 ```
 Per chiamare questo metodo del server dobbiamo usare il suo nome, esempio:
 ```
+//ui/tasks/TaskItems.jsx:
  onDelete={taskId => Meteor.call('removeTask', { taskId })}
 ```
